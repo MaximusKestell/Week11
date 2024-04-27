@@ -2,6 +2,10 @@
 
 import { ref } from 'vue'
 
+import { useStudentStore } from "../stores/StudentStore.js";
+
+const studentStore = useStudentStore()
+
 const newStudentName = ref('')
 const newStarID = ref('')
 
@@ -27,7 +31,8 @@ const addStudent = () => {
               present: false
             }
 
-            // TODO - how to add student?
+            //   how to add student?
+            studentStore.addNewStudent(student)
 
             newStudentName.value = '' // clears forms input
             newStarID.value = ''

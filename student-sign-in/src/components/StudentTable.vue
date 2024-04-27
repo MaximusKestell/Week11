@@ -1,6 +1,12 @@
 <script setup>
 
-// code here
+import {useStudentStore} from "../stores/StudentStore.js";
+
+import { storeToRefs } from "pinia";
+
+const studentStore = useStudentStore()
+
+const { studentList } = storeToRefs(studentStore)
 
 </script>
 
@@ -19,7 +25,7 @@
         </thead>
 
         <tbody>
-        <tr v-for="student in students" v-bind:class="{ present: student.present, absent: !student.present }">
+        <tr v-for="student in studentList" v-bind:class="{ present: student.present, absent: !student.present }">
 
           <td>{{ student.name }}</td>
           <td>{{ student.starID }}</td>

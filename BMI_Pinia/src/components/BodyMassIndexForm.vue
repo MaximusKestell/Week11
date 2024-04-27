@@ -8,7 +8,7 @@ import { storeToRefs } from 'pinia';
 const BMIStore = useBMIStore()
 
 // allows access to the height reactive data from store
-const { height } = storeToRefs(BMIStore)
+const { height, weight } = storeToRefs(BMIStore)
 
 </script>
 
